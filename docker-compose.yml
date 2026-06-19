@@ -1,0 +1,49 @@
+# Runs the Bun backend and a static extension preview with container health checks.
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8787
+      LOG_LEVEL: info
+    init: true
+    ports:
+      - '8787:8787'
+    healthcheck:
+      test:
+        - CMD
+        - bun
+        - -e
+        - "const response = await fetch('http://127.0.0.1:8787/health');
+          process.exit(response.ok ? 0 : 1)"
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 3s
+    restart: unless-stopped
+
+  extension-preview:
+    build:
+      context: .
+      dockerfile: extension/Dockerfile
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - '4173:80'
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'wget',
+          '--quiet',
+          '--spider',
+          'http://127.0.0.1/side-panel.html',
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 3s
+    restart: unless-stopped

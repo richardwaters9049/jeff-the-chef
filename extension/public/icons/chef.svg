@@ -1,0 +1,9 @@
+<!-- Provides a simple bundled placeholder mark until final illustrated extension artwork is supplied. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Jeff The Chef">
+  <rect width="128" height="128" rx="28" fill="#213a2c"/>
+  <path d="M34 50c-10-18 10-30 24-20 7-18 35-11 31 8 18-2 22 24 5 30H39c-13 0-18-14-5-18Z" fill="#fffaf0"/>
+  <path d="M40 61h52v35c0 13-10 22-26 22S40 109 40 96V61Z" fill="#f1c7a5"/>
+  <circle cx="54" cy="80" r="4" fill="#213a2c"/>
+  <circle cx="78" cy="80" r="4" fill="#213a2c"/>
+  <path d="M54 96c8 7 17 7 25 0" fill="none" stroke="#213a2c" stroke-width="5" stroke-linecap="round"/>
+</svg>

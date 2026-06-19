@@ -1,0 +1,14 @@
+# Keeps local dependencies, builds, secrets, and Git metadata out of Docker contexts.
+.git
+.gitignore
+node_modules
+**/node_modules
+dist
+**/dist
+coverage
+.env
+.env.*
+!.env.example
+*.enc
+*.log
+.DS_Store

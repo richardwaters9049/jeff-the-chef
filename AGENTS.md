@@ -7,9 +7,10 @@ kitchen assistant for Chrome and Arc. It will manage local notes and timers,
 answer concise cooking questions through a backend, and provide optional local
 wake-word activation.
 
-The repository is currently in the planning stage. Read `README.md` and
-`docs/PROJECT_PLAN.md` before making architectural or product decisions. Keep
-those documents accurate as implementation choices become concrete.
+The repository is in early implementation. Read `README.md`,
+`docs/PROJECT_PLAN.md`, and `docs/DIAGRAMS.md` before making architectural or
+product decisions. Keep those documents accurate as implementation choices
+become concrete.
 
 ## Product principles
 
@@ -45,6 +46,8 @@ provider.
 
 ## Technical direction
 
+- Use Bun for dependency management, workspace scripts, and the backend runtime.
+  Do not add npm or pnpm lockfiles.
 - Use TypeScript with strict type checking.
 - Use React, Vite, and Tailwind CSS for extension UI.
 - Target Chrome Manifest V3 and document the minimum supported Chrome version.
@@ -101,9 +104,9 @@ At minimum, cover:
 - Offline, timeout, quota, and provider failures without breaking local tools.
 - Keyboard navigation, visible status text, and reduced-motion behaviour.
 
-Once package scripts exist, run the repository's formatting, lint, type-check,
-unit-test, and relevant browser-test commands before handing off changes. Do not
-claim checks passed when the required scripts or browser environment are absent.
+Run `bun run check` and `bun run build` before handing off implementation
+changes. Run relevant browser tests when available. Do not claim checks passed
+when the required scripts, Docker daemon, or browser environment are absent.
 
 ## Change discipline
 

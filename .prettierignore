@@ -1,0 +1,6 @@
+# Excludes generated, installed, and encrypted files from formatting checks.
+node_modules/
+dist/
+coverage/
+*.enc
+bun.lock

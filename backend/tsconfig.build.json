@@ -1,0 +1,11 @@
+// Emits production JavaScript while excluding tests from the backend bundle.
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "dist",
+    "rootDir": "src",
+    "sourceMap": true
+  },
+  "exclude": ["src/**/*.test.ts"]
+}

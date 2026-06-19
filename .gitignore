@@ -1,0 +1,12 @@
+# Keeps dependencies, build products, secrets, and local operating-system files out of Git.
+node_modules/
+dist/
+coverage/
+.bun/
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+playwright-report/
+test-results/

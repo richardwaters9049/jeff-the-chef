@@ -1,0 +1,33 @@
+{
+  "name": "jeff-the-chef",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Workspace scripts for the Jeff The Chef browser extension and backend.",
+  "packageManager": "bun@1.3.14",
+  "workspaces": [
+    "extension",
+    "backend"
+  ],
+  "scripts": {
+    "build": "bun run --filter '*' build",
+    "check": "bun run format:check && bun run typecheck && bun run test",
+    "dev:backend": "bun --cwd backend run dev",
+    "dev:extension": "bun --cwd extension run dev",
+    "docker:build": "docker compose build",
+    "docker:down": "docker compose down",
+    "docker:logs": "docker compose logs -f",
+    "docker:up": "docker compose up --build -d",
+    "format": "bunx prettier --write .",
+    "format:check": "bunx prettier --check .",
+    "start": "./start.sh",
+    "test": "bun run --filter '*' test",
+    "typecheck": "bun run --filter '*' typecheck"
+  },
+  "engines": {
+    "bun": ">=1.3.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.4",
+    "typescript": "^6.0.3"
+  }
+}

@@ -1,0 +1,157 @@
+/* Defines Jeff's warm visual system and accessible form, list, and status treatments. */
+@import 'tailwindcss';
+
+@theme {
+  --color-cream: #f6efe3;
+  --color-ink: #213a2c;
+  --color-tomato: #bc4b32;
+  --font-display: Georgia, 'Times New Roman', serif;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    min-width: 320px;
+  }
+  button,
+  input,
+  textarea {
+    font: inherit;
+  }
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 3px solid #d89355;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .panel {
+    background: rgb(255 250 240 / 88%);
+    border: 1px solid rgb(33 58 44 / 16%);
+    border-radius: 20px;
+    box-shadow: 0 14px 34px rgb(62 41 24 / 8%);
+    margin-bottom: 20px;
+    padding: 18px;
+  }
+  .section-heading {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .section-heading h2 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 2px 0 0;
+  }
+  .eyebrow {
+    color: var(--color-tomato);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .count {
+    align-items: center;
+    background: var(--color-ink);
+    border-radius: 999px;
+    color: white;
+    display: inline-flex;
+    font-size: 0.75rem;
+    height: 28px;
+    justify-content: center;
+    min-width: 28px;
+  }
+  .stack {
+    display: grid;
+    gap: 12px;
+  }
+  label {
+    display: grid;
+    font-size: 0.78rem;
+    font-weight: 750;
+    gap: 5px;
+  }
+  input,
+  textarea {
+    background: white;
+    border: 1px solid rgb(33 58 44 / 25%);
+    border-radius: 10px;
+    color: var(--color-ink);
+    padding: 10px 11px;
+    resize: vertical;
+  }
+  .primary {
+    background: var(--color-ink);
+    border: 0;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-weight: 750;
+    padding: 11px 14px;
+  }
+  button:disabled {
+    cursor: wait;
+    opacity: 0.55;
+  }
+  .item-list {
+    display: grid;
+    gap: 0;
+    list-style: none;
+    margin: 16px 0 0;
+    padding: 0;
+  }
+  .item-list li {
+    align-items: start;
+    border-top: 1px solid rgb(33 58 44 / 12%);
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 12px 0;
+  }
+  .item-list li div {
+    display: grid;
+    gap: 3px;
+    min-width: 0;
+  }
+  .item-list span {
+    color: rgb(33 58 44 / 68%);
+    font-size: 0.78rem;
+    overflow-wrap: anywhere;
+  }
+  .quiet {
+    background: transparent;
+    border: 0;
+    color: var(--color-ink);
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 750;
+    padding: 4px;
+  }
+  .danger {
+    color: #9f2f22;
+  }
+  footer {
+    color: rgb(33 58 44 / 60%);
+    font-size: 0.72rem;
+    line-height: 1.5;
+    padding: 4px 5px 24px;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}

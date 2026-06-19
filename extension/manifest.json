@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Jeff The Chef",
+  "version": "0.1.0",
+  "description": "Voice-enabled kitchen assistant for your browser.",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "activeTab",
+    "alarms",
+    "notifications",
+    "offscreen",
+    "scripting",
+    "sidePanel",
+    "storage"
+  ],
+  "host_permissions": ["http://localhost:8787/*"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Summon Jeff",
+    "default_icon": "icons/chef-128.png"
+  },
+  "icons": {
+    "128": "icons/chef-128.png"
+  },
+  "commands": {
+    "summon-jeff": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+J",
+        "mac": "Command+Shift+J"
+      },
+      "description": "Summon Jeff The Chef"
+    }
+  },
+  "side_panel": {
+    "default_path": "side-panel.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/chef.svg"],
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ]
+}

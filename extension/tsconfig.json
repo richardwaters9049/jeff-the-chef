@@ -1,0 +1,13 @@
+// Configures strict browser and React type checking for the extension workspace.
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["DOM", "ES2023"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "types": ["chrome", "vite/client", "vitest/globals"]
+  },
+  "include": ["src", "vite.config.ts"]
+}

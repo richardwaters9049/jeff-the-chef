@@ -1,0 +1,12 @@
+// Configures strict Node.js type checking for the backend workspace.
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "noEmit": true,
+    "types": ["node", "vitest/globals"]
+  },
+  "include": ["src"]
+}
